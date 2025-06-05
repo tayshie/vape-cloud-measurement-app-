@@ -1,0 +1,12 @@
+import cv2
+cap = cv2.VideoCapture(0)  # Try with index 0
+if cap.isOpened():
+    print("Camera detected!")
+    ret, frame = cap.read()
+    if ret:
+        cv2.imshow("Test Frame", frame)
+        cv2.waitKey(0)
+    cap.release()
+    cv2.destroyAllWindows()
+else:
+    print("Camera not detected.")
